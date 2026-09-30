@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Andrew Adams, Communications Specialist: video, email, web copy, launch campaigns and live production for The Bazaar.">
+<meta property="og:title" content="Andrew Adams Portfolio">
+<meta property="og:description" content="Andrew Adams, Communications Specialist: video, email, web copy, launch campaigns and live production for The Bazaar.">
+<meta property="og:image" content="https://githublockedmyotheraccount.github.io/portfolio/img/yt_sLb1aTpydLc.jpg">
+<meta property="og:url" content="https://githublockedmyotheraccount.github.io/portfolio/">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+html{-webkit-text-size-adjust:100%}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+.thumb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+</style>
+<title>Andrew Adams Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: a run-of-show. Each section is a segment in the rundown, the Jules launch is plotted to scale on a date rail,
+   and the live show becomes a working vision mixer (preview / program / take). */
+:root{
+  --bg:#EDEFF2; --surface:#FFFFFF; --ink:#14171D; --muted:#586070; --line:#D3D8E0;
+  --accent:#A75F00; --accent-soft:#F6E7CF; --live:#D12E26;
+  --ch-steam:#2FA866; --ch-email:#B04FC0; --ch-social:#D6423C; --ch-web:#5A74D8; --ch-community:#D98A1C; --ch-creator:#1AA7B8;
+  /* control-room panel: always dark */
+  --desk:#0E1014; --desk-2:#171A21; --desk-line:#2A2F3A; --desk-ink:#E7E9EE; --desk-muted:#8D95A3; --tally-g:#2BC46D;
+  --f-display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#111318; --surface:#191C23; --ink:#E9EBEF; --muted:#9AA1AE; --line:#2B303B;
+  --accent:#F0A640; --accent-soft:#2E2414; --live:#FF5B50; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111318; --surface:#191C23; --ink:#E9EBEF; --muted:#9AA1AE; --line:#2B303B;
+  --accent:#F0A640; --accent-soft:#2E2414; --live:#FF5B50; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.6;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.02}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+
+/* top bar */
+.bar{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;padding-block:18px;border-bottom:1px solid var(--line)}
+.bar nav{display:flex;flex-wrap:wrap;gap:4px 18px}
+.bar nav a{font-family:var(--f-mono);font-size:.78rem;text-transform:uppercase;letter-spacing:.06em;text-decoration:none;color:var(--muted)}
+.bar nav a:hover{color:var(--ink)}
+.bar .who{font-family:var(--f-display);font-weight:800;font-stretch:80%;letter-spacing:.02em;text-transform:uppercase}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:end;padding-block:clamp(40px,7vw,88px) clamp(32px,5vw,56px)}
+.hero h1{font-size:clamp(3.2rem,10vw,7.5rem);font-weight:900;font-stretch:68%;text-transform:uppercase;letter-spacing:-.01em}
+.hero h1 span{display:block;color:var(--accent);font-size:.42em;font-stretch:75%;letter-spacing:.01em;margin-top:.35em}
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin-top:22px}
+.email{font-family:var(--f-mono);font-size:.92rem;user-select:all;overflow-wrap:anywhere}
+.copy{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:3px;padding:6px 10px;cursor:pointer}
+.copy:hover{border-color:var(--ink)}
+.posted{grid-column:1/-1;margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.posted figcaption{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.shot{max-height:520px;overflow:auto;border-radius:4px;border:1px solid var(--line);background:#313338}
+.shot img{display:block;width:100%;min-width:560px}
+.credits{display:flex;flex-wrap:wrap;gap:6px}
+.credits span{font-family:var(--f-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;background:var(--accent-soft);color:var(--ink);border-radius:2px;padding:3px 8px}
+.quad{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(24px,3vw,36px) clamp(20px,3vw,32px)}
+.work .note{color:var(--ink)}
+.work.feature{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(18px,3vw,36px);align-items:center}
+.feature-text{display:flex;flex-direction:column;gap:12px;min-width:0}
+.feature-text h3{font-size:clamp(1.8rem,3.4vw,2.6rem)}
+.inbox{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(20px,3vw,40px);align-items:start}
+.mail{display:flex;flex-direction:column;gap:12px;min-width:0}
+.mail .frame{border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
+.mail .head{padding:10px 14px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.mail .head b{font-family:var(--f-display);font-weight:700;font-stretch:90%;font-size:1rem}
+.mail .head span{font-family:var(--f-mono);font-size:.7rem;color:var(--muted)}
+.mail .view{height:560px;overflow-y:auto;overscroll-behavior:contain;background:#1C1822}
+.mail .view.short{height:auto;max-height:560px}
+.mail .view img{display:block;width:100%;height:auto}
+.mail h3{font-size:1.6rem;font-weight:800;font-stretch:78%}
+.mail p{color:var(--muted);font-size:1rem}
+.journey{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(20px,3vw,32px)}
+.job{display:flex;flex-direction:column;gap:12px;min-width:0;border-top:2px solid var(--ink);padding-top:16px}
+.job h3{font-size:1.9rem;font-weight:900;font-stretch:75%;text-transform:uppercase}
+.job .path{font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
+.job ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px}
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-bottom:32px}
+.nums div{background:var(--surface);padding:16px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.nums b{font-family:var(--f-display);font-weight:900;font-stretch:72%;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1;font-variant-numeric:tabular-nums}
+.nums span{font-size:.9rem;color:var(--muted)}
+.reach{margin-top:40px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:clamp(18px,3vw,28px)}
+.reach h3{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;font-stretch:75%;text-transform:uppercase}
+.hero .lede{font-size:clamp(1.15rem,2vw,1.35rem);max-width:34ch;margin-top:20px}
+.side{display:flex;flex-direction:column;gap:12px;align-self:start;margin-top:clamp(0px,4vw,48px);min-width:0}
+.soundtrack{display:flex;flex-direction:column;gap:6px}
+.music{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--ink);color:var(--bg);border:0;border-radius:4px;padding:12px 14px;cursor:pointer;font-family:var(--f-display);font-weight:700;font-stretch:88%;font-size:1rem}
+.music:hover{filter:brightness(1.15)}
+.eq{display:flex;align-items:flex-end;gap:3px;height:16px;flex:none}
+.eq i{display:block;width:3px;height:5px;background:var(--accent);border-radius:1px}
+.music[aria-pressed="true"] .eq i{animation:eq 0.9s ease-in-out infinite alternate}
+.music[aria-pressed="true"] .eq i:nth-child(2){animation-delay:-.3s}
+.music[aria-pressed="true"] .eq i:nth-child(3){animation-delay:-.6s}
+.music[aria-pressed="true"] .eq i:nth-child(4){animation-delay:-.15s}
+@keyframes eq{from{height:4px}to{height:16px}}
+.tracking{margin-top:clamp(40px,6vw,64px);display:flex;flex-direction:column;gap:24px}
+.sub-head{display:flex;flex-direction:column;gap:8px;max-width:60ch}
+.sub-head h3{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:900;font-stretch:75%;text-transform:uppercase}
+.sub-head p:last-child{color:var(--muted)}
+.metrics{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.5vw,24px)}
+.metric,.obs{margin:0;display:flex;flex-direction:column;gap:10px;min-width:0}
+.metric.wide{grid-column:1/-1}
+.dash{border-radius:6px;overflow:hidden;border:1px solid var(--line);background:#0E1014}
+.dash img{display:block;width:100%;height:auto}
+.metric figcaption,.obs figcaption{display:flex;flex-direction:column;gap:3px}
+.metric figcaption b,.obs figcaption b{font-family:var(--f-display);font-weight:700;font-stretch:88%;font-size:1.02rem}
+.metric figcaption span,.obs figcaption span{color:var(--muted);font-size:.95rem}
+.obs{margin-top:24px}
+.rundown{border:1px solid var(--line);background:var(--surface);border-radius:4px;overflow:hidden}
+.rundown .rh{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--line)}
+.rundown ol{list-style:none;margin:0;padding:0}
+.rundown li{display:grid;grid-template-columns:4.2rem minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:11px 14px;border-bottom:1px solid var(--line)}
+.rundown li:last-child{border-bottom:0}
+.rundown li a{text-decoration:none;font-family:var(--f-display);font-weight:700;font-stretch:88%;font-size:1.05rem}
+.rundown li a:hover{color:var(--accent)}
+.rundown .dur{font-size:.78rem;color:var(--muted)}
+.onair{display:inline-flex;align-items:center;gap:6px;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;color:var(--live);text-transform:uppercase}
+.onair::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--live)}
+
+/* sections */
+section.seg{padding-block:clamp(48px,7vw,88px);border-top:1px solid var(--line)}
+.seg-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:20px 48px;align-items:end;margin-bottom:36px}
+.seg-head h2{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:900;font-stretch:72%;text-transform:uppercase;margin-top:8px}
+.seg-head p{color:var(--muted);max-width:52ch}
+
+/* campaign rail */
+.rail-scroll{overflow-x:auto;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+.rail{position:relative;min-width:680px;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));padding-top:8px}
+.rail::before{content:"";position:absolute;left:calc(100%/24);right:calc(100%/24);top:41px;height:2px;background:var(--line)}
+.day{grid-row:1;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;font-family:var(--f-mono);font-size:.68rem;color:var(--muted)}
+.day .n{height:14px}
+.tick{width:1px;height:10px;background:var(--line);margin-top:13px}
+.stop{grid-row:1;position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:6px;background:none;border:0;padding:0;cursor:pointer;color:var(--ink);font:inherit}
+.stop .dot{width:22px;height:22px;border-radius:50%;background:var(--surface);border:2px solid var(--ink);margin-top:22px;transition:transform .2s,background .2s}
+.stop .lbl{font-family:var(--f-display);font-weight:700;font-stretch:80%;font-size:.86rem;line-height:1.1;max-width:9ch}
+.stop .dt{font-family:var(--f-mono);font-size:.7rem;color:var(--muted)}
+.stop:hover .dot{transform:scale(1.15)}
+.stop[aria-selected="true"] .dot{background:var(--accent);border-color:var(--accent)}
+.stop[aria-selected="true"] .lbl{color:var(--accent)}
+.stop.live .dot{border-color:var(--live)}
+.stop.live[aria-selected="true"] .dot{background:var(--live);border-color:var(--live)}
+.stop.live[aria-selected="true"] .lbl{color:var(--live)}
+.rail-note{margin-top:10px;font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+
+.beat{margin-top:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(20px,4vw,48px);background:var(--surface);border:1px solid var(--line);border-radius:4px;padding:clamp(20px,3.5vw,36px)}
+.beat h3{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:800;font-stretch:78%;margin-top:6px}
+.beat .body{display:flex;flex-direction:column;gap:16px;min-width:0}
+.chips{display:flex;flex-wrap:wrap;gap:6px 14px}
+.chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--f-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.chip i{width:10px;height:10px;display:block}
+.beat ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px}
+.beat .media{min-width:0;display:flex;flex-direction:column;gap:10px}
+.btn{align-self:flex-start;display:inline-flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.78rem;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;border:1px solid var(--ink);padding:9px 14px;border-radius:3px;background:none;color:var(--ink);cursor:pointer}
+.btn:hover{background:var(--ink);color:var(--bg)}
+.thumb{display:block;position:relative;border-radius:3px;overflow:hidden;text-decoration:none;aspect-ratio:16/9;max-width:100%;background:var(--desk)}
+.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.thumb:hover img{transform:scale(1.03)}
+.thumb .play{position:absolute;left:14px;bottom:14px;display:flex;align-items:center;gap:8px;background:rgba(10,12,16,.82);color:#fff;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;padding:7px 11px;border-radius:2px}
+.thumb .play::before{content:"";border-left:9px solid #fff;border-top:6px solid transparent;border-bottom:6px solid transparent}
+.cap{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+
+.traffic{border:1px solid var(--line);border-radius:3px;padding:14px 14px 8px}
+.traffic .stats{display:flex;flex-wrap:wrap;gap:8px 28px;margin-bottom:6px}
+.traffic .stats b{display:block;font-family:var(--f-display);font-weight:900;font-stretch:75%;font-size:2rem;line-height:1}
+.traffic .stats span{font-size:.85rem;color:var(--muted)}
+.traffic svg{width:100%;height:auto;display:block}
+.traffic text{font-family:var(--f-mono);font-size:10px;fill:var(--muted)}
+
+/* broadcast */
+.roles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden;margin-bottom:28px}
+.role{background:var(--surface);padding:18px 18px 20px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.role h3{font-size:1.25rem;font-weight:800;font-stretch:80%}
+.role p{font-size:.95rem;color:var(--muted)}
+.role .when{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+
+.desk{background:var(--desk);color:var(--desk-ink);border-radius:6px;padding:clamp(12px,2vw,20px);display:flex;flex-direction:column;gap:14px;border:1px solid var(--desk-line)}
+.desk-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--desk-muted)}
+.desk-top .tc{color:var(--desk-ink)}
+.monitors{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.mon{display:flex;flex-direction:column;gap:6px;min-width:0}
+.mon .tag{display:flex;justify-content:space-between;gap:8px;font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
+.mon .scr{position:relative;aspect-ratio:16/9;max-width:100%;border:3px solid var(--desk-line);border-radius:3px;overflow:hidden;background:#000}
+.mon .scr img{width:100%;height:100%;object-fit:cover;display:block}
+.mon.pvw .scr{border-color:var(--tally-g)} .mon.pvw .tag b{color:var(--tally-g)}
+.mon.pgm .scr{border-color:#FF4A3F} .mon.pgm .tag b{color:#FF4A3F}
+.flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+.flash.go{animation:flash .28s ease-out}
+@keyframes flash{from{opacity:.55}to{opacity:0}}
+
+.talkback{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;align-items:center;background:var(--desk-2);border:1px solid var(--desk-line);border-radius:3px;padding:10px 12px}
+.talkback .k{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--desk-muted)}
+.talkback .msg{font-family:var(--f-body);font-size:.98rem;min-width:0}
+.talkback .msg.sent{color:#FFC76A}
+.take{font-family:var(--f-display);font-weight:900;font-stretch:80%;font-size:1.1rem;letter-spacing:.06em;text-transform:uppercase;background:#FF4A3F;color:#fff;border:0;border-radius:3px;padding:12px 22px;cursor:pointer}
+.take:hover{filter:brightness(1.1)}
+.take:disabled{opacity:.5;cursor:default}
+
+.sources{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+.src{position:relative;display:flex;flex-direction:column;gap:5px;background:none;border:0;padding:0;cursor:pointer;color:var(--desk-ink);text-align:left;font:inherit;min-width:0}
+.src .t{position:relative;aspect-ratio:16/9;max-width:100%;border:2px solid var(--desk-line);border-radius:2px;overflow:hidden}
+.src img{width:100%;height:100%;object-fit:cover;display:block;opacity:.8}
+.src:hover img{opacity:1}
+.src .n{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.04em;text-transform:uppercase;color:var(--desk-muted);display:flex;gap:6px;min-width:0}
+.src .n span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.src .n kbd{font-family:inherit;color:var(--desk-ink)}
+.src.is-pvw .t{border-color:var(--tally-g)}
+.src.is-pgm .t{border-color:#FF4A3F}
+.src.is-pgm img,.src.is-pvw img{opacity:1}
+.src:focus-visible{outline:2px solid #FFC76A;outline-offset:3px}
+
+.log{font-family:var(--f-mono);font-size:.72rem;color:var(--desk-muted);display:flex;flex-direction:column;gap:3px;max-height:5.4em;overflow:hidden}
+.log div:first-child{color:var(--desk-ink)}
+.hint{font-family:var(--f-mono);font-size:.72rem;color:var(--muted);margin-top:10px}
+
+/* video + web */
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,3vw,32px)}
+.work{display:flex;flex-direction:column;gap:12px;min-width:0}
+.work h3{font-size:1.6rem;font-weight:800;font-stretch:78%}
+.work .yt{font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
+.work p{color:var(--muted);font-size:1rem}
+.browser{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--surface)}
+.browser .chrome{display:flex;align-items:center;gap:10px;padding:8px 10px;border-bottom:1px solid var(--line)}
+.browser .dots{display:flex;gap:5px}
+.browser .dots i{width:9px;height:9px;border-radius:50%;background:var(--line);display:block}
+.browser .url{flex:1;min-width:0;font-family:var(--f-mono);font-size:.72rem;color:var(--muted);background:var(--bg);border-radius:3px;padding:4px 10px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.browser .view{height:360px;overflow-y:auto;overscroll-behavior:contain}
+.browser .view img{display:block;width:100%}
+.facts{display:flex;flex-wrap:wrap;gap:6px}
+.facts span{font-family:var(--f-mono);font-size:.7rem;border:1px solid var(--line);border-radius:2px;padding:3px 7px;color:var(--muted)}
+
+footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+
+@media (max-width:860px){
+  .hero,.seg-head,.beat{grid-template-columns:minmax(0,1fr)}
+  .roles,.nums{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sources{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+@media (max-width:600px){
+  .monitors,.pair,.journey,.quad,.inbox,.work.feature,.metrics{grid-template-columns:minmax(0,1fr)}
+  .roles{grid-template-columns:minmax(0,1fr)}
+  .talkback{grid-template-columns:minmax(0,1fr)}
+  .talkback .take{width:100%}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="bar">
+    <span class="who">Andrew Adams</span>
+    <nav aria-label="Sections">
+      <a href="#video">Video</a>
+      <a href="#email">Email</a>
+      <a href="#web">Web</a>
+      <a href="#launch">Jules launch</a>
+      <a href="#live">Live show</a>
+      <a href="#journey">Background</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <p class="eyebrow">Video · Email &amp; web · Launches · Live production</p>
+      <h1>Andrew Adams <span>Communications Specialist</span></h1>
+      <p class="lede">I make the things players watch, read and show up for: 60+ videos, player email, launch campaigns, community events and live broadcasts for The Bazaar.</p>
+      <div class="contact"><span class="email" id="email">andrewnadams13@gmail.com</span><button class="copy" type="button" id="copyEmail">Copy email</button></div>
+    </div>
+    <div class="side">
+    <div class="rundown" aria-label="What's on this page">
+      <div class="rh"><span class="eyebrow">Rundown</span><span class="onair">Live show inside</span></div>
+      <ol>
+        <li><span class="mono dur">A</span><a href="#video">Video &amp; animation</a><span class="mono dur">60+ videos</span></li>
+        <li><span class="mono dur">B</span><a href="#email">Email campaigns</a><span class="mono dur">every send</span></li>
+        <li><span class="mono dur">C</span><a href="#web">Website pages</a><span class="mono dur">whole site</span></li>
+        <li><span class="mono dur">D</span><a href="#launch">Jules launch campaign</a><span class="mono dur">12 days</span></li>
+        <li><span class="mono dur">E</span><a href="#live">Jules Early Access Challenge</a><span class="mono dur">2:50:30</span></li>
+        <li><span class="mono dur">F</span><a href="#journey">Background</a><span class="mono dur">2019–now</span></li>
+      </ol>
+    </div>
+    <div class="soundtrack">
+      <button class="music" id="music" type="button" aria-pressed="false">
+        <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span class="music-label" id="musicLabel">Click here for a more immersive experience</span>
+      </button>
+      <span class="cap">Soundtrack: “Gentry Dance”, Founder's Pack Series</span>
+      <audio id="track" src="audio/gentry-dance.mp3" preload="none" loop></audio>
+    </div>
+    </div>
+  </div>
+</div>
+
+<section class="seg" id="video">
+  <div class="wrap">
+    <div class="seg-head">
+      <div><p class="eyebrow">Video · 60+ videos · 3 animated shorts</p><h2>Video &amp; animation</h2></div>
+      <p>Over 14 months I made more than 60 videos and 3 animated shorts for The Bazaar's channel. On every one I came up with the concept and produced it: coordinating editing, art, lore, audio and design, keeping every team on schedule, and signing off on the final cut. On the documentaries and animated shorts I also wrote the script and storyboarded. I also built the content calendar and release schedule that kept the YouTube channel growing. A few favorites:</p>
+    </div>
+    <div class="quad">
+      <article class="work feature">
+        <a class="thumb" href="https://www.youtube.com/watch?v=sLb1aTpydLc" target="_blank" rel="noopener"><img src="img/yt_sLb1aTpydLc.jpg" alt="Thumbnail for The Bazaar: Introducing Vanessa" loading="lazy"><span class="play">Watch on YouTube</span></a>
+        <div class="feature-text">
+          <p class="eyebrow">Animated short · The piece I'm proudest of</p>
+          <h3>Introducing Vanessa</h3>
+          <p class="yt">“The Bazaar: Introducing Vanessa”</p>
+          <p class="note">One of three animated shorts I made, each introducing a hero with their own story and personality.</p>
+          <div class="credits"><span>Concept</span><span>Script</span><span>Storyboard</span><span>Producer</span><span>Release plan</span></div>
+        </div>
+      </article>
+      <article class="work">
+        <a class="thumb" href="https://www.youtube.com/watch?v=9HvaBMwaI6I" target="_blank" rel="noopener"><img src="img/yt_9HvaBMwaI6I.jpg" alt="Thumbnail for The Journey Behind, The Journey Ahead" loading="lazy"><span class="play">Watch on YouTube</span></a>
+        <p class="eyebrow">Documentary</p>
+        <h3>The Journey Behind, The Journey Ahead</h3>
+        <p class="yt">“The Journey Behind, The Journey Ahead | The Bazaar”</p>
+        <p class="note">One of the first I put together: the story of The Bazaar's development from start to finish, told with in-person footage from the team and the art along the way.</p>
+        <div class="credits"><span>Concept</span><span>Script</span><span>Storyboard</span><span>Producer</span><span>Release plan</span></div>
+      </article>
+      <article class="work">
+        <a class="thumb" href="https://www.youtube.com/watch?v=eHAX84Ut7A4" target="_blank" rel="noopener"><img src="img/yt_eHAX84Ut7A4.jpg" alt="Thumbnail for Season 4: Bazaarian Summer" loading="lazy"><span class="play">Watch on YouTube</span></a>
+        <p class="eyebrow">Lore series</p>
+        <h3>Atlas Archives</h3>
+        <p class="yt">“Season 4: Bazaarian Summer”</p>
+        <p class="note">A lore series that tells the story of the world behind each season.</p>
+        <div class="credits"><span>Concept</span><span>Producer</span><span>Release plan</span></div>
+        <a class="btn" href="https://www.youtube.com/playlist?list=PL3qblbBtHwhcpnTrXI3Sp5_-l0gl4pNKS" target="_blank" rel="noopener">Watch the full series ↗</a>
+      </article>
+      <article class="work">
+        <a class="thumb" href="https://www.youtube.com/watch?v=yU31FE7x2Z0" target="_blank" rel="noopener"><img src="img/yt_yU31FE7x2Z0.jpg" alt="Thumbnail for Into the Void, Art Spotlight #20" loading="lazy"><span class="play">Watch on YouTube</span></a>
+        <p class="eyebrow">Art Spotlight series</p>
+        <h3>Into the Void</h3>
+        <p class="yt">“Into the Void | The Bazaar | Art Spotlight #20”</p>
+        <p class="note">Art Spotlights celebrated our artists and our very diverse team. The artists wrote their own scripts and narrated in their native language with translated subtitles, and our editor Steven cut their recorded work together.</p>
+        <div class="credits"><span>Concept</span><span>Producer</span><span>Release plan</span></div>
+      </article>
+      <article class="work">
+        <a class="thumb" href="https://www.youtube.com/watch?v=BK990S0H0rg&amp;list=PL3qblbBtHwheowtlaru7NJUGrinr2bi_x" target="_blank" rel="noopener"><img src="img/yt_BK990S0H0rg.jpg" alt="Thumbnail for Gentry Dance, Founder's Pack Series" loading="lazy"><span class="play">Watch on YouTube</span></a>
+        <p class="eyebrow">Founder's Pack Series · 6 episodes</p>
+        <h3>Founder's Pack Series</h3>
+        <p class="yt">“Gentry Dance | Founder's Pack Series”</p>
+        <p class="note">A six-part series. I helped polish the edits and planned its release schedule.</p>
+        <div class="credits"><span>Editing polish</span><span>Release plan</span></div>
+        <a class="btn" href="https://www.youtube.com/playlist?list=PL3qblbBtHwheowtlaru7NJUGrinr2bi_x" target="_blank" rel="noopener">Watch the full series ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="seg" id="email">
+  <div class="wrap">
+    <div class="seg-head">
+      <div><p class="eyebrow">Email</p><h2>Email campaigns</h2></div>
+      <p>I ran every email The Bazaar sent. I wrote all the copy, set the release schedule, managed the mailing list and had final say on every send. Our UX/UI designer Max Hase designed the emails and built the HTML. Two examples below; scroll inside each one.</p>
+    </div>
+    <div class="inbox">
+      <article class="mail">
+        <div class="frame">
+          <div class="head"><b>Season 4 of The Bazaar Starts Today!</b><span>From The Bazaar · Steam launch, Aug 13, 2025</span></div>
+          <div class="view" tabindex="0" aria-label="Steam launch email, scrollable"><img src="img/email_SteamStelle.jpg" width="560" height="2554" alt="Email announcing The Bazaar's Steam launch with a base game and Stelle bundle for $19.99" loading="lazy"></div>
+        </div>
+        <h3>Steam launch</h3>
+        <p>The Bazaar's debut on Steam, with a three-day launch bundle of the base game and new hero Stelle for $19.99. It leads with the offer, then Stelle's cinematic, then what's new in the patch.</p>
+      </article>
+      <article class="mail">
+        <div class="frame">
+          <div class="head"><b>The Bazaar's Fancy Correspondence</b><span>From The Bazaar · Domain warm-up series</span></div>
+          <div class="view short" tabindex="0" aria-label="Warm-up email, scrollable"><img src="img/email_warming2.jpg" width="560" height="868" alt="Short warm-up email thanking readers on behalf of the communications team" loading="lazy"></div>
+        </div>
+        <h3>Warm-up series</h3>
+        <p>Before a new sending domain can reach inboxes, it needs a record of real mail being opened. This short series went to our own team to build that record for PlayTheBazaar.com ahead of the big sends. It's signed by Max, my partner on the email program, who designed and built it.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="seg" id="web">
+  <div class="wrap">
+    <div class="seg-head">
+      <div><p class="eyebrow">Web</p><h2>Player &amp; press pages</h2></div>
+      <p>I wrote the copy for every page on playthebazaar.com. Two examples: one page that answers players before they reach support, and one that gives press everything they need without an email. Scroll inside each frame.</p>
+    </div>
+    <div class="pair">
+      <article class="work">
+        <div class="browser">
+          <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">playthebazaar.com/faq</span></div>
+          <div class="view" tabindex="0" aria-label="FAQ page screenshot, scrollable"><img src="img/faq.jpg" alt="Screenshot of The Bazaar FAQ page" loading="lazy"></div>
+        </div>
+        <h3>FAQ</h3>
+        <p>Common questions grouped into Game and Account: where to buy, platforms, system requirements, Tempo accounts, the creator program and subscriptions.</p>
+        <a class="btn" href="https://playthebazaar.com/faq" target="_blank" rel="noopener">Open live page ↗</a>
+      </article>
+      <article class="work">
+        <div class="browser">
+          <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">playthebazaar.com/press</span></div>
+          <div class="view" tabindex="0" aria-label="Press page screenshot, scrollable"><img src="img/press.jpg" alt="Screenshot of The Bazaar press and media page" loading="lazy"></div>
+        </div>
+        <h3>Press &amp; media</h3>
+        <p>A self-serve press kit with the full video library, logo kit, key art and hero portraits.</p>
+        <div class="facts"><span>10 videos</span><span>Logos · 4 sets</span><span>Key art to 3840×2160</span><span>7 hero portraits</span></div>
+        <a class="btn" href="https://playthebazaar.com/press" target="_blank" rel="noopener">Open live page ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="seg" id="launch">
+  <div class="wrap">
+    <div class="seg-head">
+      <div>
+        <p class="eyebrow">Case study · Oct 22 – Nov 2, 2025</p>
+        <h2>Launching Jules</h2>
+      </div>
+      <p>Jules, a new hero, got a twelve-day build-up instead of a single post. Each beat gave players a new reason to pay attention, and everything led to a live tournament. Pick a date to see what went out.</p>
+    </div>
+
+    <div class="rail-scroll">
+      <div class="rail" id="rail" role="tablist" aria-label="Campaign beats"></div>
+    </div>
+    <p class="rail-note">Dates plotted to scale, one column per day.</p>
+
+    <div class="beat" id="beat" role="tabpanel" aria-live="polite"></div>
+
+    <div class="tracking">
+      <div class="sub-head">
+        <p class="eyebrow">Measuring it</p>
+        <h3>What I watched while it ran</h3>
+        <p>I tracked the community daily across Discord and Reddit during the campaign: who was joining, who was actually talking, and what needed moderating. These are the dashboards I checked each day.</p>
+      </div>
+      <div class="metrics">
+        <figure class="metric wide">
+          <div class="dash"><img src="img/trk_reddit_overview.png" width="922" height="183" alt="Reddit 30-day overview: 1.7 million views, 52.7 thousand members, 1.4 thousand published posts, 7.2 thousand published comments" loading="lazy"></div>
+          <figcaption><b>Reddit · 30-day overview</b><span>1.7M views and 52.7K members, averaging 12.5K unique visitors a day.</span></figcaption>
+        </figure>
+        <figure class="metric wide">
+          <div class="dash"><img src="img/trk_discord_members.png" width="1414" height="377" alt="Discord chart of new members per day with the share who talked and who visited more than three channels, Oct 27 to Nov 1" loading="lazy"></div>
+          <figcaption><b>Discord · New members and activation, Oct 27 – Nov 1</b><span>How many people joined each day and how many actually took part. On Oct 29, 37 people joined and 48.6% explored more than three channels.</span></figcaption>
+        </figure>
+        <figure class="metric">
+          <div class="dash"><img src="img/trk_discord_msgs.png" width="692" height="385" alt="Discord chart of messages sent per day and average messages per active member, Oct 27 to Nov 1" loading="lazy"></div>
+          <figcaption><b>Discord · Messages per day</b><span>Chat volume and messages per active member. Both climbed back on Oct 31, the day the Jules short came out.</span></figcaption>
+        </figure>
+        <figure class="metric">
+          <div class="dash"><img src="img/trk_reddit_posts.png" width="906" height="505" alt="Reddit chart of posts published and removed per day, Oct 28 to Nov 3" loading="lazy"></div>
+          <figcaption><b>Reddit · Posts per day, Oct 28 – Nov 3</b><span>298 posts published and 42 removed in one week of moderation.</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="seg" id="live">
+  <div class="wrap">
+    <div class="seg-head">
+      <div>
+        <p class="eyebrow">Live broadcast · Sunday, Nov 2, 2025 · Executive producer</p>
+        <h2>Jules Early Access Challenge</h2>
+      </div>
+      <p>A full-length creator tournament on Twitch: ten streamers, none of whom had played Jules before, live for 2 hours 50 minutes. I planned the event from scratch, then ran it from the control seat while it was on air.</p>
+    </div>
+
+    <div class="roles">
+      <div class="role"><span class="when">Before the show</span><h3>Planning &amp; setup</h3><p>Planned the whole event, booked and coordinated every participant, brought the casters on board, and built the technical setup myself.</p></div>
+      <div class="role"><span class="when">On air</span><h3>Tournament admin</h3><p>Coordinated with players and talent in real time to keep matches running on schedule.</p></div>
+      <div class="role"><span class="when">On air</span><h3>Director</h3><p>Called every shot: which board, cam or desk view went to air, and when to cut.</p></div>
+      <div class="role"><span class="when">On air</span><h3>Producer</h3><p>Warned the casters before each change so no cut ever caught them off guard.</p></div>
+    </div>
+
+    <div class="desk" id="desk">
+      <div class="desk-top"><span>Vision mixer · try the director's seat</span><span class="tc" id="tc">PGM 0:01:30</span></div>
+      <div class="monitors">
+        <div class="mon pvw"><div class="tag"><b>Preview</b><span id="pvwName"></span></div><div class="scr"><img id="pvwImg" alt=""></div></div>
+        <div class="mon pgm"><div class="tag"><b>● Program</b><span id="pgmName"></span></div><div class="scr"><img id="pgmImg" alt=""><div class="flash" id="flash"></div></div></div>
+      </div>
+      <div class="talkback">
+        <span class="k">Talkback<br>to casters</span>
+        <p class="msg" id="msg"></p>
+        <button class="take" id="take" type="button">Take</button>
+      </div>
+      <div class="sources" id="sources"></div>
+      <div class="log" id="log" aria-live="polite"></div>
+    </div>
+    <figure class="obs">
+      <div class="dash"><img src="img/obs.jpg" width="1877" height="934" alt="OBS in Studio Mode during the tournament: preview on the caster scene, program on a player's game stream, with a scene for each player, caster scenes, an interview scene and a break scene" loading="lazy"></div>
+      <figcaption><b>The real thing: my OBS during the show</b><span>Studio Mode with preview on the left and program on the right. I built a scene for every player's stream, plus caster, interview and break scenes, and cut between them live while running the tournament.</span></figcaption>
+    </figure>
+    <p class="hint">Pick a source to preview it, then press Take. The talkback cue goes out first, the cut follows. Keys 1–6 select, Enter takes. Frames are from the broadcast recording at the timecodes shown.</p>
+  </div>
+</section>
+
+<section class="seg" id="journey">
+  <div class="wrap">
+    <div class="seg-head">
+      <div><p class="eyebrow">Background · 2019 – now</p><h2>How I got here</h2></div>
+      <p>I started out running Discord communities and tournaments, then grew with The Bazaar from community manager to leading production across its teams.</p>
+    </div>
+    <div class="nums">
+      <div><b>150K+</b><span>Discord members on The Bazaar, up from 2,500</span></div>
+      <div><b>78M+</b><span>Reddit views in 12 months</span></div>
+      <div><b>6.6M</b><span>X impressions in 12 months</span></div>
+      <div><b>61 + 3</b><span>videos and animated shorts in 14 months</span></div>
+    </div>
+    <div class="journey">
+      <article class="job">
+        <p class="eyebrow">The Bazaar · 2022 – now</p>
+        <h3>Tempo</h3>
+        <p class="path">Community Manager → Community Director → Producer</p>
+        <ul>
+          <li>Wrote and ran a content-based marketing strategy and the annual content calendar</li>
+          <li>Concepted and produced 61 videos and 3 animated shorts, writing and storyboarding many of them</li>
+          <li>Led a team of 8+ across social, merchandise, community platforms and support</li>
+          <li>Ran weekly goals and retrospectives across engineering, art, tech art, community and QA</li>
+          <li>Built weekly community sentiment reporting across platforms</li>
+        </ul>
+      </article>
+      <article class="job">
+        <p class="eyebrow">2019 – 2022</p>
+        <h3>Tournament Kings</h3>
+        <p class="path">Community Manager → Director of Sales</p>
+        <ul>
+          <li>Managed 8+ Discord communities with 600K+ members</li>
+          <li>Organized tournaments for Fortnite, Valorant, Call of Duty, Wild Rift, TFT, Hearthstone, Minecraft and more</li>
+          <li>Worked with brands including Riot Games, Tencent and Twitch Rivals</li>
+          <li>Grew the product's audience by over two million users</li>
+        </ul>
+      </article>
+    </div>
+    <div class="reach">
+      <h3>Get in touch</h3>
+      <div class="contact" style="margin-top:0"><span class="email">andrewnadams13@gmail.com</span><a class="btn" href="https://www.linkedin.com/in/andynadams13" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <footer>
+    <span>Andrew Adams · Selected work, 2025</span>
+    <span>The Bazaar footage and artwork belong to their owners and are shown as work samples.</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  const CH = {steam:["Steam","--ch-steam"],email:["Email","--ch-email"],social:["Socials","--ch-social"],web:["Web","--ch-web"],community:["Community","--ch-community"],creator:["Creators","--ch-creator"]};
+  const DAYS = ["22","23","24","25","26","27","28","29","30","31","1","2"];
+  const TRAFFIC = [[0,6],[4,8],[8,9],[10,10],[12,11],[14,9],[18,8],[22,8],[24,7],[28,7],[32,8],[36,10],[38,11],[42,9],[46,8],[50,7],[54,8],[56,10],[57,175],[58,115],[59,80],[60,60],[61,52],[62,36],[63,33],[65,34],[66,24],[68,22],[70,18],[72,21],[74,18],[76,16],[78,22],[80,23],[82,21],[84,22],[86,18],[88,20],[90,16],[92,13],[94,16],[96,12],[100,11],[104,11],[106,12],[108,14],[110,17],[112,20],[113,15],[114,18],[116,10],[118,12],[120,10]];
+
+  function trafficSVG(){
+    const W=520,H=190,L=34,R=8,T=14,B=24, x=h=>L+h/120*(W-L-R), y=v=>T+(1-v/180)*(H-T-B);
+    const pts=TRAFFIC.map(([h,v])=>x(h).toFixed(1)+","+y(v).toFixed(1)).join(" ");
+    let g="";
+    [0,60,120,180].forEach(v=>{g+=`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${L-6}" y="${y(v)+3}" text-anchor="end">${v?v+"k":"0"}</text>`});
+    ["Mon 20","Tue 21","Wed 22","Thu 23","Fri 24"].forEach((d,i)=>{g+=`<text x="${x(i*24)}" y="${H-6}">${d}</text>`});
+    const px=x(57),py=y(175);
+    return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Hourly requests to playthebazaar.com, Oct 20 to 24. Around 8 thousand per hour before the announcement, peaking near 175 thousand in the hour it went live on Wednesday Oct 22.">${g}
+      <polygon points="${x(0)},${y(0)} ${pts} ${x(120)},${y(0)}" fill="var(--accent)" fill-opacity=".14"/>
+      <polyline points="${pts}" fill="none" stroke="var(--accent)" stroke-width="1.8" stroke-linejoin="round"/>
+      <circle cx="${px}" cy="${py}" r="3.5" fill="var(--accent)"/>
+      <text x="${px+8}" y="${py+4}" style="fill:var(--ink)">≈175k / hr, announcement</text></svg>`;
+  }
+
+  const IMG = (src,alt,cap)=>`<img src="img/${src}" alt="${alt}" style="border-radius:3px;width:100%;display:block"><p class="cap">${cap}</p>`;
+  const BEATS = [
+    {d:0, date:"Wed · Oct 22", short:"Announce", title:"The announcement",
+     ch:["web","social","email","steam"],
+     text:"Jules went public on every channel the same morning. The announcement led with her story, from refugee to celebrity chef cooking for her daughter. I hand-picked the teaser image to match: her hand on a fridge covered in a kid's drawings, before players had even seen her face.",
+     list:["Jules landing page on playthebazaar.com","Teaser post built around one curated image","Preview emails to active and lapsed players","Jules DLC page live on Steam"],
+     media:()=>`<div class="traffic"><div class="stats"><div><b class="mono">2M</b><span>site requests, Oct 20–24</span></div><div><b class="mono">~20×</b><span>normal hourly traffic at the peak</span></div></div>${trafficSVG()}</div><p class="cap">Traced from the Cloudflare report for playthebazaar.com. Values approximate.</p>`,
+     shot:["d_oct22.png","Discord announcement introducing Jules with the fridge teaser image","439 reactions"]},
+    {d:2, date:"Fri · Oct 24", short:"Bazaar Bites", title:"Community challenge: Bazaar Bites",
+     ch:["community","social"],
+     text:"Jules is a chef, so we asked players to cook. Bazaar Bites was a real cooking competition: make a dish to impress Jules, photograph it next to your Discord name, and enter one of six categories. A deliberately silly video kicked it off.",
+     list:["Six categories, from “Most likely to cause a cavity” to “Laurel's possible new favorite”","Photo proof with Discord username, no AI images, one entry each","Entries closed Nov 7. Prize: a secret title and gems"],
+     media:()=>`<a class="thumb" href="https://www.youtube.com/watch?v=M7z26QAOkoU" target="_blank" rel="noopener"><img src="img/yt_M7z26QAOkoU.jpg" alt="Thumbnail for Jules Community Event: Bazaarbites"><span class="play">Watch the video</span></a><p class="cap">“Jules Community Event: Bazaarbites”</p>`,
+     shot:["d_oct24.png","Discord post announcing the Bazaar Bites cooking challenge and its rules",""]},
+    {d:5, date:"Mon · Oct 27", short:"Tournament", title:"Tournament announced",
+     ch:["creator","social"],
+     text:"Announced the Jules Early Access Challenge for Sunday, November 2, live on Twitch. The hook: eight streamers, none of whom had played Jules before, racing tightening time limits for the most wins with the fewest losses.",
+     list:["Eight creators named, with links to their channels","Format built for chaos: new hero, shrinking clock","Starts the countdown to the show"],
+     media:()=>IMG("cam_90.jpg","Caster desk under the Jules Early Access Challenge title","The show the announcement promised, as it looked on the day."),
+     shot:["d_oct27.png","Discord post announcing the Jules Early Access Challenge and its eight streamers","137 reactions"]},
+    {d:7, date:"Wed · Oct 29", short:"Balance patch", title:"Balance patch & reveals",
+     ch:["steam","social","creator"],
+     text:"Balance changes and updates shipped mid-campaign, while a new Jules teaser and creator card reveals kept the hero in players' feeds between the big moments.",
+     list:["Balance patch and game updates","Second Jules teaser on socials","Creators begin revealing Jules cards"],
+     media:()=>IMG("cam_300.jpg","Gameplay of a Jules food build with the player's webcam","Jules food items in play, from the Nov 2 broadcast.")},
+    {d:9, date:"Fri · Oct 31", short:"Animated short", title:"Animated short + two more chefs",
+     ch:["community","social","creator"],
+     text:"Released the Jules hero spotlight, an animated short introducing her, and in the same post added two more challengers to the tournament: Kripp and Littlemonk. That brought the lineup to ten, two days before the show.",
+     list:["“Introducing Jules” animated short","Kripp and Littlemonk join the tournament","Broadcast highlight clips for socials"],
+     media:()=>`<a class="thumb" href="https://www.youtube.com/watch?v=xJ4GBwxheoU" target="_blank" rel="noopener"><img src="img/yt_xJ4GBwxheoU.jpg" alt="Thumbnail for The Bazaar: Introducing Jules"><span class="play">Watch the short</span></a><p class="cap">“The Bazaar: Introducing Jules”</p>`,
+     shot:["d_oct31.png","Discord post sharing the Jules animated short and naming two more tournament players","214 reactions"]},
+    {d:11, date:"Sun · Nov 2", short:"Live show", title:"Live: Jules Early Access Challenge", live:true,
+     ch:["creator"],
+     text:"The payoff. A full-length creator tournament, 2 hours 50 minutes live on Twitch, with me as executive producer: tournament admin, director and producer at the same time.",
+     list:["Ten creators, casters and tech, all set up by me","Ran admin, shot calling and caster cues live","Full recording on file"],
+     media:()=>`<img src="img/cam_3000.jpg" alt="Tournament matchup screen featuring SpaceBunny" style="border-radius:3px;width:100%;display:block"><a class="btn" href="#live">Go to the show ↓</a>`}
+  ];
+
+  const rail=document.getElementById("rail"), beat=document.getElementById("beat");
+  DAYS.forEach((n,i)=>{const d=document.createElement("div");d.className="day";d.style.gridColumn=i+1;d.innerHTML=`<span class="n">${n}${i===0?" Oct":i===10?" Nov":""}</span><span class="tick"></span>`;rail.appendChild(d)});
+  const stops=BEATS.map((b,i)=>{
+    const s=document.createElement("button");s.type="button";s.className="stop"+(b.live?" live":"");s.style.gridColumn=b.d+1;
+    s.setAttribute("role","tab");s.id="stop"+i;
+    s.innerHTML=`<span class="dot"></span><span class="lbl">${b.short}</span>`;
+    s.addEventListener("click",()=>show(i));
+    s.addEventListener("keydown",e=>{if(e.key==="ArrowRight"){show(Math.min(i+1,BEATS.length-1),true)}if(e.key==="ArrowLeft"){show(Math.max(i-1,0),true)}});
+    rail.appendChild(s);return s;
+  });
+  function show(i,focus){
+    const b=BEATS[i];
+    stops.forEach((s,j)=>{s.setAttribute("aria-selected",j===i);s.tabIndex=j===i?0:-1});
+    if(focus)stops[i].focus();
+    beat.setAttribute("aria-labelledby","stop"+i);
+    beat.innerHTML=`<div class="body"><p class="eyebrow">${b.date}</p><h3>${b.title}</h3>
+      <div class="chips">${b.ch.map(c=>`<span class="chip"><i style="background:var(${CH[c][1]})"></i>${CH[c][0]}</span>`).join("")}</div>
+      <p>${b.text}</p><ul>${b.list.map(l=>`<li>${l}</li>`).join("")}</ul></div>
+      <div class="media">${b.media()}</div>
+      ${b.shot?`<figure class="posted"><figcaption><span class="eyebrow">As posted in Discord</span>${b.shot[2]?`<span class="cap">${b.shot[2]}</span>`:""}</figcaption><div class="shot" tabindex="0"><img src="img/${b.shot[0]}" alt="${b.shot[1]}"></div></figure>`:""}`;
+    try{localStorage.setItem("aa-beat",i)}catch(e){}
+  }
+  let start=0;try{const v=parseInt(localStorage.getItem("aa-beat"),10);if(v>=0&&v<BEATS.length)start=v}catch(e){}
+  show(start);
+
+  /* vision mixer */
+  const SRC=[
+    {img:"cam_90.jpg",name:"Caster desk",tc:"0:01:30",cue:"Casters, coming to you in 5. Open on the bracket."},
+    {img:"cam_300.jpg",name:"Player board A",tc:"0:05:00",cue:"Heads up: going to a player's board next. Food build is live."},
+    {img:"cam_1800.jpg",name:"Player board B",tc:"0:30:00",cue:"Switching boards after this fight. Second match, player cam bottom left."},
+    {img:"cam_3000.jpg",name:"Matchup card",tc:"0:50:00",cue:"Matchup card is up. SpaceBunny's fight, call it when you're ready."},
+    {img:"cam_4200.jpg",name:"Break bumper",tc:"1:10:00",cue:"Break in 10. Tell chat we'll be right back."},
+    {img:"cam_9000.jpg",name:"Winner interview",tc:"2:30:00",cue:"Our winner is on the line. Throw to the interview as soon as you wrap the final."}
+  ];
+  let pgm=0,pvw=1,busy=false;
+  const $=id=>document.getElementById(id), srcBox=$("sources"), logEl=$("log"), take=$("take");
+  const reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const btns=SRC.map((s,i)=>{
+    const b=document.createElement("button");b.type="button";b.className="src";
+    b.innerHTML=`<span class="t"><img src="img/${s.img}" alt="" loading="lazy"></span><span class="n"><kbd>${i+1}</kbd><span>${s.name}</span></span>`;
+    b.setAttribute("aria-label",`Preview ${s.name}`);
+    b.addEventListener("click",()=>{if(i===pvw&&i!==pgm)doTake();else setPvw(i)});
+    srcBox.appendChild(b);return b;
+  });
+  function paint(){
+    btns.forEach((b,i)=>{b.classList.toggle("is-pgm",i===pgm);b.classList.toggle("is-pvw",i===pvw&&i!==pgm)});
+    $("pgmImg").src="img/"+SRC[pgm].img;$("pgmImg").alt="On air: "+SRC[pgm].name;$("pgmName").textContent=SRC[pgm].name;
+    $("pvwImg").src="img/"+SRC[pvw].img;$("pvwImg").alt="In preview: "+SRC[pvw].name;$("pvwName").textContent=SRC[pvw].name;
+    $("tc").textContent="PGM "+SRC[pgm].tc;
+    const m=$("msg");m.classList.remove("sent");
+    m.textContent=pvw===pgm?"Pick a different source to set up the next shot.":"“"+SRC[pvw].cue+"”";
+    take.disabled=pvw===pgm;
+  }
+  function setPvw(i){if(busy)return;pvw=i;paint()}
+  function addLog(t){const d=document.createElement("div");d.textContent=t;logEl.prepend(d);while(logEl.children.length>3)logEl.lastChild.remove()}
+  function doTake(){
+    if(busy||pvw===pgm)return;busy=true;take.disabled=true;
+    const m=$("msg");m.classList.add("sent");m.textContent="Cue sent. Casters are ready. Cutting…";
+    addLog(`${SRC[pvw].tc}  TB → casters: ${SRC[pvw].name}`);
+    setTimeout(()=>{
+      const old=pgm;pgm=pvw;pvw=old;busy=false;
+      addLog(`${SRC[pgm].tc}  CUT  ${SRC[old].name} → ${SRC[pgm].name}`);
+      const f=$("flash");f.classList.remove("go");void f.offsetWidth;if(!reduce)f.classList.add("go");
+      paint();
+    },reduce?0:700);
+  }
+  take.addEventListener("click",doTake);
+  const desk=$("desk");
+  document.addEventListener("keydown",e=>{
+    const r=desk.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+    if(e.target.closest&&e.target.closest("input,textarea"))return;
+    const n=parseInt(e.key,10);
+    if(n>=1&&n<=6){setPvw(n-1);e.preventDefault()}
+    else if(e.key==="Enter"&&!e.target.closest("button,a")){doTake();e.preventDefault()}
+  });
+  const track=$("track"), music=$("music"), musicLabel=$("musicLabel");
+  track.volume=0.45;
+  music.addEventListener("click",()=>{
+    if(track.paused){
+      track.play().then(()=>{music.setAttribute("aria-pressed","true");musicLabel.textContent="Pause the music"})
+        .catch(()=>{musicLabel.textContent="Couldn't start the audio. Tap again to retry"});
+    }else{track.pause();music.setAttribute("aria-pressed","false");musicLabel.textContent="Resume the music"}
+  });
+  $("copyEmail").addEventListener("click",()=>{const b=$("copyEmail"),t="andrewnadams13@gmail.com";
+    const done=()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy email",1600)};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents($("email"));const g=getSelection();g.removeAllRanges();g.addRange(r);b.textContent="Selected"};
+    try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}});
+  addLog("0:00:00  Show start. Program on caster desk.");
+  paint();
+})();
+</script>
+
+<script>
+/* Standalone only: play YouTube videos in place instead of leaving the page. */
+(function(){
+  const track=document.getElementById("track"), music=document.getElementById("music"), label=document.getElementById("musicLabel");
+  document.querySelectorAll('a.thumb[href*="youtube.com/watch"]').forEach(a=>{
+    const u=new URL(a.href), id=u.searchParams.get("v"), list=u.searchParams.get("list");
+    const play=a.querySelector(".play"); if(play) play.textContent="Play video";
+    a.addEventListener("click",e=>{
+      e.preventDefault();
+      if(track&&!track.paused){track.pause();music.setAttribute("aria-pressed","false");label.textContent="Resume the music"}
+      const f=document.createElement("iframe");
+      f.src="https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0"+(list?"&list="+list:"");
+      f.title=(a.querySelector("img")||{}).alt||"YouTube video";
+      f.allow="autoplay; encrypted-media; picture-in-picture; fullscreen";
+      f.allowFullscreen=true;
+      const box=document.createElement("div");box.className="thumb";box.appendChild(f);
+      a.replaceWith(box);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
