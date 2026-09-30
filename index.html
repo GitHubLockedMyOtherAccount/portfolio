@@ -124,6 +124,10 @@ p{margin:0}
 .metric figcaption b,.obs figcaption b{font-family:var(--f-display);font-weight:700;font-stretch:88%;font-size:1.02rem}
 .metric figcaption span,.obs figcaption span{color:var(--muted);font-size:.95rem}
 .obs{margin-top:24px}
+.avatar{display:block;width:clamp(96px,12vw,132px);height:auto;aspect-ratio:1;border-radius:50%;background:var(--accent-soft);margin-bottom:18px}
+.patch{margin-top:clamp(28px,4vw,44px);display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(18px,3vw,36px);align-items:center}
+.patch .browser .view{height:420px}
+.patch .work{align-self:center}
 .rundown{border:1px solid var(--line);background:var(--surface);border-radius:4px;overflow:hidden}
 .rundown .rh{display:flex;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--line)}
 .rundown ol{list-style:none;margin:0;padding:0}
@@ -254,7 +258,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
   .sources{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media (max-width:600px){
-  .monitors,.pair,.journey,.quad,.inbox,.work.feature,.metrics{grid-template-columns:minmax(0,1fr)}
+  .monitors,.pair,.journey,.quad,.inbox,.work.feature,.metrics,.patch{grid-template-columns:minmax(0,1fr)}
   .roles{grid-template-columns:minmax(0,1fr)}
   .talkback{grid-template-columns:minmax(0,1fr)}
   .talkback .take{width:100%}
@@ -280,6 +284,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
 
   <div class="hero">
     <div>
+      <img class="avatar" src="img/andrew.png" width="320" height="320" alt="Andrew Adams, smiling and waving">
       <p class="eyebrow">Video · Email &amp; web · Launches · Live production</p>
       <h1>Andrew Adams <span>Communications Specialist</span></h1>
       <p class="lede">I make the things players watch, read and show up for: 60+ videos, player email, launch campaigns, community events and live broadcasts for The Bazaar.</p>
@@ -291,7 +296,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
       <ol>
         <li><span class="mono dur">A</span><a href="#video">Video &amp; animation</a><span class="mono dur">60+ videos</span></li>
         <li><span class="mono dur">B</span><a href="#email">Email campaigns</a><span class="mono dur">every send</span></li>
-        <li><span class="mono dur">C</span><a href="#web">Website pages</a><span class="mono dur">whole site</span></li>
+        <li><span class="mono dur">C</span><a href="#web">Website &amp; patch notes</a><span class="mono dur">whole site</span></li>
         <li><span class="mono dur">D</span><a href="#launch">Jules launch campaign</a><span class="mono dur">12 days</span></li>
         <li><span class="mono dur">E</span><a href="#live">Jules Early Access Challenge</a><span class="mono dur">2:50:30</span></li>
         <li><span class="mono dur">F</span><a href="#journey">Background</a><span class="mono dur">2019–now</span></li>
@@ -394,8 +399,8 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
 <section class="seg" id="web">
   <div class="wrap">
     <div class="seg-head">
-      <div><p class="eyebrow">Web</p><h2>Player &amp; press pages</h2></div>
-      <p>I wrote the copy for every page on playthebazaar.com. Two examples: one page that answers players before they reach support, and one that gives press everything they need without an email. Scroll inside each frame.</p>
+      <div><p class="eyebrow">Web</p><h2>Website &amp; patch notes</h2></div>
+      <p>I wrote the copy for every page on playthebazaar.com, and wrote or edited the game's patch notes. Examples: one page that answers players before they reach support, and one that gives press everything they need without an email. Scroll inside each frame.</p>
     </div>
     <div class="pair">
       <article class="work">
@@ -416,6 +421,18 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
         <p>A self-serve press kit with the full video library, logo kit, key art and hero portraits.</p>
         <div class="facts"><span>10 videos</span><span>Logos · 4 sets</span><span>Key art to 3840×2160</span><span>7 hero portraits</span></div>
         <a class="btn" href="https://playthebazaar.com/press" target="_blank" rel="noopener">Open live page ↗</a>
+      </article>
+    </div>
+    <div class="patch">
+      <div class="browser">
+        <div class="chrome"><span class="dots"><i></i><i></i><i></i></span><span class="url">playthebazaar-cdn.azureedge.net/thebazaar/PatchNotes.html</span></div>
+        <div class="view" tabindex="0" aria-label="Patch notes page screenshot, scrollable"><img src="img/patch.jpg" alt="Screenshot of The Bazaar patch notes, starting with the November 12, 2025 hotfix" loading="lazy"></div>
+      </div>
+      <article class="work">
+        <p class="eyebrow">Patch notes</p>
+        <h3>Patch notes</h3>
+        <p>Every balance change, bug fix and new feature, written so players can scan for what affects their build. I wrote or edited all of the copy on this page.</p>
+        <a class="btn" href="https://playthebazaar-cdn.azureedge.net/thebazaar/PatchNotes.html" target="_blank" rel="noopener">Read the patch notes ↗</a>
       </article>
     </div>
   </div>
@@ -600,7 +617,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
      ch:["steam","social","creator"],
      text:"Balance changes and updates shipped mid-campaign, while a new Jules teaser and creator card reveals kept the hero in players' feeds between the big moments.",
      list:["Balance patch and game updates","Second Jules teaser on socials","Creators begin revealing Jules cards"],
-     media:()=>IMG("cam_300.jpg","Gameplay of a Jules food build with the player's webcam","Jules food items in play, from the Nov 2 broadcast.")},
+     media:()=>IMG("cam_300.jpg","Gameplay of a Jules food build with the player's webcam","Jules food items in play, from the Nov 2 broadcast.")+`<a class="btn" href="https://playthebazaar-cdn.azureedge.net/thebazaar/PatchNotes.html" target="_blank" rel="noopener">Read the patch notes ↗</a>`},
     {d:9, date:"Fri · Oct 31", short:"Animated short", title:"Animated short + two more chefs",
      ch:["community","social","creator"],
      text:"Released the Jules hero spotlight, an animated short introducing her, and in the same post added two more challengers to the tournament: Kripp and Littlemonk. That brought the lineup to ten, two days before the show.",
