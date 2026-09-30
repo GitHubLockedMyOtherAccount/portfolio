@@ -101,16 +101,20 @@ p{margin:0}
 .reach h3{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:900;font-stretch:75%;text-transform:uppercase}
 .hero .lede{font-size:clamp(1.15rem,2vw,1.35rem);max-width:34ch;margin-top:20px}
 .side{display:flex;flex-direction:column;gap:12px;align-self:start;margin-top:clamp(0px,4vw,48px);min-width:0}
-.soundtrack{display:flex;flex-direction:column;gap:6px}
-.music{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--ink);color:var(--bg);border:0;border-radius:4px;padding:12px 14px;cursor:pointer;font-family:var(--f-display);font-weight:700;font-stretch:88%;font-size:1rem}
-.music:hover{filter:brightness(1.15)}
-.eq{display:flex;align-items:flex-end;gap:3px;height:16px;flex:none}
-.eq i{display:block;width:3px;height:5px;background:var(--accent);border-radius:1px}
-.music[aria-pressed="true"] .eq i{animation:eq 0.9s ease-in-out infinite alternate}
-.music[aria-pressed="true"] .eq i:nth-child(2){animation-delay:-.3s}
-.music[aria-pressed="true"] .eq i:nth-child(3){animation-delay:-.6s}
-.music[aria-pressed="true"] .eq i:nth-child(4){animation-delay:-.15s}
-@keyframes eq{from{height:4px}to{height:16px}}
+.soundtrack{display:flex;flex-direction:column}
+.music{position:relative;display:flex;align-items:center;gap:14px;width:100%;text-align:left;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:12px 16px 12px 12px;cursor:pointer;overflow:hidden;font:inherit}
+.music:hover{border-color:var(--muted)}
+.music-icon{flex:none;width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--bg);display:grid;place-items:center;transition:transform .2s ease}
+.music:hover .music-icon{transform:scale(1.07)}
+.music-icon svg{width:18px;height:18px;fill:currentColor}
+.i-play{margin-left:3px}
+.i-pause,.music[aria-pressed="true"] .i-play{display:none}
+.music[aria-pressed="true"] .i-pause{display:block}
+.music-text{display:flex;flex-direction:column;gap:3px;min-width:0}
+.music-label{font-family:var(--f-display);font-weight:700;font-stretch:88%;font-size:1.02rem;line-height:1.2}
+.music-sub{font-family:var(--f-mono);font-size:.7rem;color:var(--muted)}
+.music-bar{position:absolute;left:0;right:0;bottom:0;height:3px}
+.music-bar i{display:block;height:100%;width:0;background:var(--accent);transition:width .25s linear}
 .tracking{margin-top:clamp(40px,6vw,64px);display:flex;flex-direction:column;gap:24px}
 .sub-head{display:flex;flex-direction:column;gap:8px;max-width:60ch}
 .sub-head h3{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:900;font-stretch:75%;text-transform:uppercase}
@@ -303,11 +307,17 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
       </ol>
     </div>
     <div class="soundtrack">
-      <button class="music" id="music" type="button" aria-pressed="false">
-        <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span class="music-label" id="musicLabel">Click here for a more immersive experience</span>
+      <button class="music" id="music" type="button" aria-pressed="false" aria-label="Play the soundtrack">
+        <span class="music-icon" aria-hidden="true">
+          <svg class="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>
+          <svg class="i-pause" viewBox="0 0 24 24"><path d="M6.5 4.5h4v15h-4zM13.5 4.5h4v15h-4z"/></svg>
+        </span>
+        <span class="music-text">
+          <span class="music-label" id="musicLabel">Click here for a more immersive experience</span>
+          <span class="music-sub">Soundtrack · “Gentry Dance”</span>
+        </span>
+        <span class="music-bar" aria-hidden="true"><i id="musicProg"></i></span>
       </button>
-      <span class="cap">Soundtrack: “Gentry Dance”, Founder's Pack Series</span>
       <audio id="track" src="audio/gentry-dance.mp3" preload="none" loop></audio>
     </div>
     </div>
@@ -710,10 +720,11 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
   track.volume=0.45;
   music.addEventListener("click",()=>{
     if(track.paused){
-      track.play().then(()=>{music.setAttribute("aria-pressed","true");musicLabel.textContent="Pause the music"})
+      track.play().then(()=>{music.setAttribute("aria-pressed","true");music.setAttribute("aria-label","Pause the soundtrack");musicLabel.textContent="Playing. Click to pause"})
         .catch(()=>{musicLabel.textContent="Couldn't start the audio. Tap again to retry"});
-    }else{track.pause();music.setAttribute("aria-pressed","false");musicLabel.textContent="Resume the music"}
+    }else{track.pause();music.setAttribute("aria-pressed","false");music.setAttribute("aria-label","Play the soundtrack");musicLabel.textContent="Paused. Click to resume"}
   });
+  track.addEventListener("timeupdate",()=>{if(track.duration)$("musicProg").style.width=(track.currentTime/track.duration*100)+"%"});
   $("copyEmail").addEventListener("click",()=>{const b=$("copyEmail"),t="andrewnadams13@gmail.com";
     const done=()=>{b.textContent="Copied";setTimeout(()=>b.textContent="Copy email",1600)};
     const sel=()=>{const r=document.createRange();r.selectNodeContents($("email"));const g=getSelection();g.removeAllRanges();g.addRange(r);b.textContent="Selected"};
@@ -732,7 +743,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
     const play=a.querySelector(".play"); if(play) play.textContent="Play video";
     a.addEventListener("click",e=>{
       e.preventDefault();
-      if(track&&!track.paused){track.pause();music.setAttribute("aria-pressed","false");label.textContent="Resume the music"}
+      if(track&&!track.paused){track.pause();music.setAttribute("aria-pressed","false");label.textContent="Paused. Click to resume";music.setAttribute("aria-label","Play the soundtrack")}
       const f=document.createElement("iframe");
       f.src="https://www.youtube-nocookie.com/embed/"+id+"?autoplay=1&rel=0"+(list?"&list="+list:"");
       f.title=(a.querySelector("img")||{}).alt||"YouTube video";
