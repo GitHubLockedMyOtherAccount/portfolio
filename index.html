@@ -22,7 +22,7 @@ img{max-width:100%}
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
 <style>
-/* Layout: a run-of-show. Each section is a segment in the rundown, the Jules launch is plotted to scale on a date rail,
+/* Layout v2: About me up top, then three full-width company bands that unfold. Inside The Bazaar: a run-of-show. Each section is a segment in the rundown, the Jules launch is plotted to scale on a date rail,
    and the live show becomes a working vision mixer (preview / program / take). */
 :root{
   --bg:#EDEFF2; --surface:#FFFFFF; --ink:#14171D; --muted:#586070; --line:#D3D8E0;
@@ -43,7 +43,7 @@ img{max-width:100%}
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1.0625rem;line-height:1.6;margin:0}
-.wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,4vw,40px)}
+.wrap{max-width:1320px;margin:0 auto;padding-inline:clamp(16px,2.5vw,32px)}
 a{color:inherit}
 a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.02}
@@ -268,6 +268,155 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
   .talkback .take{width:100%}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- v2: about + company panels ---------- */
+.hero.about{align-items:start}
+.about-copy{display:flex;flex-direction:column;gap:14px;max-width:58ch;margin-top:22px}
+.about-copy p{font-size:1.08rem}
+.about-copy p:first-child{font-size:clamp(1.15rem,1.9vw,1.3rem)}
+.skills{display:flex;flex-wrap:wrap;gap:6px;margin-top:26px}
+/* section labels in the accent color so they stand out */
+.hero .eyebrow,.seg-head .eyebrow,.sub-head .eyebrow,.stack>div>.eyebrow,.stack>.eyebrow,.rundown .rh .eyebrow:first-child{color:var(--accent)}
+.skills span{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--line);background:var(--surface);border-radius:2px;padding:4px 8px;color:var(--ink)}
+.jobs{list-style:none;margin:0;padding:0}
+.jobs li{display:block;padding:0;border-bottom:1px solid var(--line)}
+.jobs li:last-child{border-bottom:0}
+.job-btn{width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;align-items:center;text-align:left;background:none;border:0;padding:14px;cursor:pointer;color:var(--ink);font:inherit}
+.job-btn:hover{background:var(--bg)}
+.job-btn b{font-family:var(--f-display);font-weight:800;font-stretch:85%;font-size:1.15rem;line-height:1.1}
+.job-btn .jr{grid-column:1;font-size:.88rem;color:var(--muted);line-height:1.35}
+.job-btn .jy{grid-row:1/3;grid-column:2;font-family:var(--f-mono);font-size:.74rem;color:var(--muted);text-align:right}
+.hero.about{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr)}
+.job-btn{padding:16px 18px 10px}
+.job-btn b{font-size:1.35rem}
+.job-btn .jr{font-size:.95rem}
+.panel [id]{scroll-margin-top:16px}
+.jtags{display:flex;flex-wrap:wrap;gap:6px;padding:0 18px 16px}
+.rundown .jtags a{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;color:var(--ink);background:var(--accent-soft);border-radius:2px;padding:4px 8px;transition:background .15s,color .15s}
+.rundown .jtags a:hover{background:var(--accent);color:var(--bg)}
+.jtags a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.injump{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-block:22px 0}
+.injump .eyebrow{color:var(--accent);margin-right:6px}
+.injump a{font-family:var(--f-display);font-weight:600;font-stretch:90%;font-size:.98rem;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:5px 12px}
+.injump a:hover{border-color:var(--accent);color:var(--accent)}
+@media (max-width:860px){.hero.about{grid-template-columns:minmax(0,1fr)}}
+
+.companies{display:flex;flex-direction:column;gap:14px;padding-block:8px clamp(48px,7vw,88px)}
+.co{border-radius:6px;overflow:hidden;border:1px solid var(--line);background:var(--surface);scroll-margin-top:16px}
+.band{position:relative;display:flex;align-items:flex-end;justify-content:space-between;gap:16px;width:100%;min-height:clamp(170px,22vw,250px);padding:clamp(18px,3vw,30px);border:0;cursor:pointer;text-align:left;color:#fff;background:#14171D;overflow:hidden;font:inherit}
+.band-bg{position:absolute;inset:0}
+.band-bg img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
+.band:hover .band-bg img{transform:scale(1.03)}
+.band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,9,12,.82) 0%,rgba(8,9,12,.45) 45%,rgba(8,9,12,0) 75%)}
+.band-body,.band-toggle{position:relative;z-index:1}
+.band-body{display:flex;flex-direction:column;gap:6px;min-width:0}
+.band-meta{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.band-title{font-family:var(--f-display);font-weight:900;font-stretch:72%;text-transform:uppercase;font-size:clamp(2.2rem,5.5vw,3.8rem);line-height:.95}
+.band-role{font-size:.98rem;color:rgba(255,255,255,.88)}
+.band-toggle{flex:none;display:flex;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:8px 12px 8px 14px;backdrop-filter:blur(4px)}
+.band:hover .band-toggle{background:rgba(255,255,255,.24)}
+.chev{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s}
+.band[aria-expanded="true"] .chev{transform:rotate(180deg)}
+.band .t-close,.band[aria-expanded="true"] .t-open{display:none}
+.band[aria-expanded="true"] .t-close{display:inline}
+.band:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+
+.band.bazaar .band-bg img{position:absolute;width:85%;height:auto;left:18.5%;top:50%;transform:translateY(-50%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 22%)}
+.band.bazaar:hover .band-bg img{transform:translateY(-50%) scale(1.03)}
+@media (max-width:600px){.band.bazaar .band-bg img{width:100%;height:100%;left:0;top:0;transform:none;object-fit:cover;-webkit-mask-image:none;mask-image:none}}
+.band.kobo{background:#EF883E;color:#101214}
+.band.kobo::after{display:none}
+.band.kobo .band-meta{color:rgba(16,18,20,.72)}
+.band.kobo .band-role{color:#101214}
+.band.kobo .band-toggle{background:rgba(16,18,20,.08);border-color:rgba(16,18,20,.45);color:#101214}
+.band.kobo:hover .band-toggle{background:rgba(16,18,20,.16)}
+.band.kobo .kobo-mark{height:clamp(34px,5vw,52px);width:auto;display:block;align-self:flex-start}
+.kobold-art{position:absolute;top:50%;right:clamp(0px,11vw,160px);width:553px;height:395px;transform:translateY(-50%) scale(.62);transform-origin:right center;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.k-orbit{position:absolute;left:50%;top:50%;width:310px;height:310px;margin:-155px 0 0 -155px;border:1px solid #9B4E11;border-radius:50%}
+.k-orbit::after{content:"";position:absolute;inset:32px;border:1px dashed #9B4E11;border-radius:50%}
+.k-mascot{position:relative;width:270px;height:290px;object-fit:contain;transform:rotate(-8deg);filter:drop-shadow(10px 14px 0 rgba(16,18,20,.125));transition:transform .45s cubic-bezier(.3,1.6,.5,1)}
+.band.kobo:hover .k-mascot{transform:rotate(-2deg) scale(1.04)}
+.k-sticker{position:absolute;z-index:2;padding:12px 15px;font-family:"Courier New",var(--f-mono);font-weight:700;font-size:13px;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap;box-shadow:4px 4px 0 rgba(16,18,20,.2);transition:transform .45s ease}
+.k-sticker.one{left:0;top:25px;background:#101214;color:#F5F1E8;transform:rotate(-9deg)}
+.k-sticker.two{right:0;top:97px;background:#F5F1E8;color:#101214;transform:rotate(8deg)}
+.band.kobo:hover .k-sticker.one{transform:rotate(-12deg) translateY(-3px)}
+.band.kobo:hover .k-sticker.two{transform:rotate(11deg) translateY(-3px)}
+@media (max-width:1100px){.kobold-art{transform:translateY(-50%) scale(.5);right:120px}}
+.kobo-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(20px,3vw,40px);align-items:start}
+.kobo-grid figure{margin:0;display:flex;flex-direction:column;gap:8px;min-width:0}
+.kobo-grid figure img{width:100%;display:block;border-radius:6px}
+.did{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:6px}
+.band.joyn{background:#1D242B}
+.band.joyn::after{background:linear-gradient(90deg,rgba(29,36,43,.95) 0%,rgba(29,36,43,.6) 60%,rgba(29,36,43,0) 100%)}
+.joyn-art{position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-end;padding-right:clamp(16px,16vw,220px)}
+.joyn-art svg{position:absolute;left:0;right:0;top:50%;width:100%;height:60px;transform:translateY(-50%);opacity:.9}
+.joyn-art img{position:relative;height:72%;width:auto;max-width:40%;object-fit:contain}
+
+.panel{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s ease}
+.panel.open{grid-template-rows:1fr}
+.panel-clip{overflow:hidden;min-height:0}
+.panel .seg{padding-block:clamp(36px,5vw,64px)}
+.panel .seg:first-child{border-top:0}
+.panel-intro{padding-block:clamp(28px,4vw,44px) 8px;display:flex;flex-direction:column;gap:20px}
+.panel-intro .lead{font-size:clamp(1.1rem,1.8vw,1.25rem);max-width:62ch}
+.panel-intro ul{margin:0;padding-left:1.1em;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 32px}
+.panel-intro .nums{margin-bottom:0}
+:root{--tint-scu:#F8ECEE;--tint-bs:#FFF5D1}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--tint-scu:#2B171B;--tint-bs:#2B2512}}
+:root[data-theme="dark"]{--tint-scu:#2B171B;--tint-bs:#2B2512}
+.partner{position:relative;overflow:hidden;min-height:190px;isolation:isolate}
+.partner>*:not(.p-bg){position:relative;z-index:1}
+.p-bg{position:absolute;inset:0;z-index:0;pointer-events:none}
+.p-bg img{position:absolute;display:block}
+.partner.p-ac{background:#12162A;color:#F3F1EA}
+.p-ac .p-art{inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 40%;opacity:.55}
+.p-ac .p-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(18,22,42,.95) 0%,rgba(18,22,42,.7) 55%,rgba(18,22,42,.25) 100%)}
+.p-ac .p-mark{right:-14px;bottom:-10px;width:62%;opacity:.22;z-index:1;transform:rotate(-6deg)}
+.partner.p-ac .eyebrow{color:#F2C14E}
+.partner.p-ac p{color:rgba(243,241,234,.82)}
+.partner.p-scu{background:var(--tint-scu)}
+.p-scu .p-mark{right:-48px;bottom:-56px;width:210px;opacity:.16;transform:rotate(-10deg)}
+.partner.p-bs{background:var(--tint-bs)}
+.p-bs .p-mark{right:-30px;bottom:-18px;width:250px;opacity:.2;transform:rotate(-8deg)}
+.try{margin-block:32px 14px;font-family:var(--f-display);font-weight:700;font-stretch:88%;font-size:1.15rem;line-height:1.3}
+.try::before{content:"↓ ";color:var(--accent)}
+.nums.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.panel-close{display:flex;justify-content:center;padding-block:8px 36px}
+
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.5vw,24px)}
+.product{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:start;border:1px solid var(--line);border-radius:6px;padding:16px;background:var(--bg)}
+.product img{width:96px;height:96px;border-radius:12px;display:block}
+.product div{display:flex;flex-direction:column;gap:8px;min-width:0}
+.product h4,.partner h4{margin:0;font-family:var(--f-display);font-weight:800;font-stretch:85%;font-size:1.25rem;line-height:1.1}
+.product p,.partner p{color:var(--muted);font-size:.98rem}
+.partners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+.partner{background:var(--surface);padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.partner .eyebrow{color:var(--accent)}
+.communities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.community{position:relative;display:block;border-radius:6px;overflow:hidden;aspect-ratio:16/9;max-width:100%;text-decoration:none;color:#fff;background:#1D242B}
+.community img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.community:hover img{transform:scale(1.04)}
+.community::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8),rgba(0,0,0,0) 60%)}
+.community span{position:absolute;left:12px;bottom:10px;right:12px;z-index:1;display:flex;flex-direction:column}
+.community b{font-family:var(--f-display);font-weight:800;font-stretch:88%;font-size:1.05rem;line-height:1.15}
+.community small{font-family:var(--f-mono);font-size:.7rem;opacity:.85}
+.stack{display:flex;flex-direction:column;gap:22px}
+.stack h3.sub{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:900;font-stretch:75%;text-transform:uppercase}
+.soon{border:1px dashed var(--line);border-radius:6px;padding:20px;color:var(--muted);background:var(--bg)}
+.kobo-shots{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(18px,3vw,36px);align-items:center}
+.kobo-shots img{width:100%;border-radius:6px;display:block}
+
+@media (max-width:860px){
+  .partners,.communities,.nums.three{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .products,.kobo-shots,.kobo-grid{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:600px){
+  .panel-intro ul,.partners{grid-template-columns:minmax(0,1fr)}
+  .band{flex-direction:column;align-items:flex-start}
+  .joyn-art img{opacity:.35}
+  .kobold-art{opacity:.3;transform:translateY(-50%) scale(.45);right:-60px}
+  .k-sticker{display:none}
+}
 </style>
 </head>
 <body>
@@ -277,36 +426,39 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
   <header class="bar">
     <span class="who">Andrew Adams</span>
     <nav aria-label="Sections">
-      <a href="#video">Video</a>
-      <a href="#email">Email</a>
-      <a href="#web">Web</a>
-      <a href="#launch">Jules launch</a>
-      <a href="#live">Live show</a>
-      <a href="#journey">Background</a>
+      <a href="#about">About</a>
+      <a href="#bazaar" data-open="bazaar">The Bazaar</a>
+      <a href="#kobo" data-open="kobo">Kobo</a>
+      <a href="#joyn" data-open="joyn">Joyn</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
-  <div class="hero">
+  <div class="hero about" id="about">
     <div>
       <img class="avatar" src="img/andrew.png" width="320" height="320" alt="Andrew Adams, smiling and waving">
-      <p class="eyebrow">Video · Email &amp; web · Launches · Live production</p>
+      <p class="eyebrow">About me</p>
       <h1>Andrew Adams <span>Communications Specialist</span></h1>
-      <p class="lede">I make the things players watch, read and show up for: 60+ videos, player email, launch campaigns, community events and live broadcasts for The Bazaar.</p>
+      <div class="about-copy">
+        <p>I help game and tech startups talk to their players. Since 2019 I've grown Discord communities from a few thousand people to over 150,000, run more than a thousand live tournaments, and produced 60+ videos and three animated shorts.</p>
+        <p>Startups rarely have a person for every job, so I've learned to be several of them: community manager, writer, marketer, producer, tournament organizer and director of sales. I've written every player email, web page and patch note for a live game, planned the content calendar that grew its YouTube channel, and run a live broadcast from the director's chair.</p>
+        <p>Behind the scenes I keep teams moving. I've led weekly goals and retrospectives across engineering, art, QA and community, and I'm at my best when plans change overnight and someone has to make the call and tell everyone what happens next.</p>
+      </div>
+      <div class="skills" aria-label="Expertise">
+        <span>Community growth</span><span>Content strategy</span><span>Video production</span><span>Copywriting</span><span>Email</span><span>Live events &amp; broadcast</span><span>Cross-team production</span><span>Partnerships &amp; sales</span><span>Community sentiment</span>
+      </div>
       <div class="contact"><span class="email" id="email">andrewnadams13@gmail.com</span><button class="copy" type="button" id="copyEmail">Copy email</button></div>
     </div>
     <div class="side">
-    <div class="rundown" aria-label="What's on this page">
-      <div class="rh"><span class="eyebrow">Rundown</span><span class="onair">Live show inside</span></div>
-      <ol>
-        <li><span class="mono dur">A</span><a href="#video">Video &amp; animation</a><span class="mono dur">60+ videos</span></li>
-        <li><span class="mono dur">B</span><a href="#email">Email campaigns</a><span class="mono dur">every send</span></li>
-        <li><span class="mono dur">C</span><a href="#web">Website &amp; patch notes</a><span class="mono dur">whole site</span></li>
-        <li><span class="mono dur">D</span><a href="#launch">Jules launch campaign</a><span class="mono dur">12 days</span></li>
-        <li><span class="mono dur">E</span><a href="#live">Jules Early Access Challenge</a><span class="mono dur">2:50:30</span></li>
-        <li><span class="mono dur">F</span><a href="#journey">Background</a><span class="mono dur">2019–now</span></li>
-      </ol>
-    </div>
-    <div class="soundtrack">
+      <div class="rundown" aria-label="Work experience">
+        <div class="rh"><span class="eyebrow">Work experience</span><span class="eyebrow">Click to open</span></div>
+        <ul class="jobs">
+          <li><button class="job-btn" type="button" data-open="bazaar"><b>The Bazaar</b><span class="jr">Tempo · Community Manager → Community Director → Producer</span><span class="jy">2022 – 2025</span></button><div class="jtags"><a href="#video">Video</a><a href="#email">Writing</a><a href="#launch">Case study</a><a href="#live">Live broadcast</a></div></li>
+          <li><button class="job-btn" type="button" data-open="kobo"><b>Kobo</b><span class="jr">Community &amp; events · Hello Neighbor tech preview with tinyBuild</span><span class="jy">2025 – 2026</span></button><div class="jtags"><a href="#kobo-preview">Role overview</a><a href="#kobo-holiday">Community post</a></div></li>
+          <li><button class="job-btn" type="button" data-open="joyn"><b>Joyn</b><span class="jr">Formerly Tournament Kings · Community Manager → Director of Sales</span><span class="jy">2019 – 2022</span></button><div class="jtags"><a href="#joyn-products">Products</a><a href="#joyn-partners">Partnerships</a><a href="#joyn-communities">Communities</a></div></li>
+        </ul>
+      </div>
+      <div class="soundtrack">
       <button class="music" id="music" type="button" aria-pressed="false" aria-label="Play the soundtrack">
         <span class="music-icon" aria-hidden="true">
           <svg class="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l12.5-7.5z"/></svg>
@@ -324,6 +476,31 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
   </div>
 </div>
 
+<div class="wrap companies" id="work">
+  <section class="co" id="bazaar">
+    <button class="band bazaar" type="button" id="b-bazaar" aria-expanded="false" aria-controls="p-bazaar">
+      <span class="band-bg"><img src="img/co/bazaar-band.jpg" alt=""></span>
+      <span class="band-body"><span class="band-meta">Tempo · 2022 – 2025</span><span class="band-title">The Bazaar</span><span class="band-role">Video, email, web, launches and live production</span></span>
+      <span class="band-toggle"><span class="t-open">Open</span><span class="t-close">Close</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="panel" id="p-bazaar" role="region" aria-labelledby="b-bazaar" inert>
+      <div class="panel-clip">
+        <nav class="wrap injump" aria-label="In this section"><span class="eyebrow">In this section</span><a href="#video">Video &amp; animation</a><a href="#email">Email campaigns</a><a href="#web">Website &amp; patch notes</a><a href="#launch">Launching Jules</a><a href="#live">Jules Early Access Challenge</a></nav>
+        <div class="wrap panel-intro">
+          <p class="lead">At Tempo I grew with The Bazaar from its community manager to a producer working across every team. I ran player communication end to end: video, email, the website and patch notes, community events, and live broadcasts. Everything below is from my time there.</p>
+          <div class="nums">
+            <div><b>150K+</b><span>Discord members, up from 2,500</span></div>
+            <div><b>78M+</b><span>Reddit views in 12 months</span></div>
+            <div><b>6.6M</b><span>X impressions in 12 months</span></div>
+            <div><b>61 + 3</b><span>videos and animated shorts in 14 months</span></div>
+          </div>
+          <ul>
+            <li>Wrote and ran a content-based marketing strategy and the annual content calendar</li>
+            <li>Led a team of 8+ across social, merchandise, community platforms and support</li>
+            <li>Ran weekly goals and retrospectives across engineering, art, tech art, community and QA</li>
+            <li>Built weekly community sentiment reporting across platforms</li>
+          </ul>
+        </div>
 <section class="seg" id="video">
   <div class="wrap">
     <div class="seg-head">
@@ -378,7 +555,6 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
     </div>
   </div>
 </section>
-
 <section class="seg" id="email">
   <div class="wrap">
     <div class="seg-head">
@@ -405,7 +581,6 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
     </div>
   </div>
 </section>
-
 <section class="seg" id="web">
   <div class="wrap">
     <div class="seg-head">
@@ -447,7 +622,6 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
     </div>
   </div>
 </section>
-
 <section class="seg" id="launch">
   <div class="wrap">
     <div class="seg-head">
@@ -492,7 +666,6 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
     </div>
   </div>
 </section>
-
 <section class="seg" id="live">
   <div class="wrap">
     <div class="seg-head">
@@ -510,76 +683,136 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
       <div class="role"><span class="when">On air</span><h3>Producer</h3><p>Warned the casters before each change so no cut ever caught them off guard.</p></div>
     </div>
 
-    <div class="desk" id="desk">
-      <div class="desk-top"><span>Vision mixer · try the director's seat</span><span class="tc" id="tc">PGM 0:01:30</span></div>
-      <div class="monitors">
-        <div class="mon pvw"><div class="tag"><b>Preview</b><span id="pvwName"></span></div><div class="scr"><img id="pvwImg" alt=""></div></div>
-        <div class="mon pgm"><div class="tag"><b>● Program</b><span id="pgmName"></span></div><div class="scr"><img id="pgmImg" alt=""><div class="flash" id="flash"></div></div></div>
-      </div>
-      <div class="talkback">
-        <span class="k">Talkback<br>to casters</span>
-        <p class="msg" id="msg"></p>
-        <button class="take" id="take" type="button">Take</button>
-      </div>
-      <div class="sources" id="sources"></div>
-      <div class="log" id="log" aria-live="polite"></div>
-    </div>
     <figure class="obs">
       <div class="dash"><img src="img/obs.jpg" width="1877" height="934" alt="OBS in Studio Mode during the tournament: preview on the caster scene, program on a player's game stream, with a scene for each player, caster scenes, an interview scene and a break scene" loading="lazy"></div>
       <figcaption><b>The real thing: my OBS during the show</b><span>Studio Mode with preview on the left and program on the right. I built a scene for every player's stream, plus caster, interview and break scenes, and cut between them live while running the tournament.</span></figcaption>
     </figure>
+    <p class="try">Want to know what running it felt like? Try my interactive producer feature below: pick a shot, cue the casters, and take it to air.</p>
+    <div class="desk" id="desk">
+      <div class="desk-top"><span>Vision mixer · try the director's seat</span><span class="tc" id="tc">PGM 0:01:30</span></div>
+      <div class="monitors">
+        <div class="mon pvw"><div class="tag"><b>Preview</b><span id="pvwName"></span></div><div class="scr"><img id="pvwImg" alt=""></div></div>
+        <div class="mon pgm"><div class="tag"><b>● Live</b><span id="pgmName"></span></div><div class="scr"><img id="pgmImg" alt=""><div class="flash" id="flash"></div></div></div>
+      </div>
+      <div class="talkback">
+        <span class="k">Talkback<br>to casters</span>
+        <p class="msg" id="msg"></p>
+        <button class="take" id="take" type="button">Transition</button>
+      </div>
+      <div class="sources" id="sources"></div>
+      <div class="log" id="log" aria-live="polite"></div>
+    </div>
     <p class="hint">Pick a source to preview it, then press Take. The talkback cue goes out first, the cut follows. Keys 1–6 select, Enter takes. Frames are from the broadcast recording at the timecodes shown.</p>
   </div>
 </section>
+        <div class="panel-close"><button class="btn" type="button" data-close="bazaar">Close The Bazaar ↑</button></div>
+      </div>
+    </div>
+  </section>
+  <section class="co" id="kobo">
+    <button class="band kobo" type="button" id="b-kobo" aria-expanded="false" aria-controls="p-kobo">
+      <span class="kobold-art" aria-hidden="true"><span class="k-orbit"></span><img class="k-mascot" src="img/co/kobold.png" alt=""><span class="k-sticker one">“Who put that there?”</span><span class="k-sticker two">“You’re welcome.”</span></span>
+      <span class="band-body"><span class="band-meta">kobo.io · 2025 – 2026</span><img class="kobo-mark" src="img/co/kobo-wordmark-dark.svg" alt="Kobo"><span class="band-role">Community Discord and Hello Neighbor tech preview events</span></span>
+      <span class="band-toggle"><span class="t-open">Open</span><span class="t-close">Close</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="panel" id="p-kobo" role="region" aria-labelledby="b-kobo" inert>
+      <div class="panel-clip">
+        <nav class="wrap injump" aria-label="In this section"><span class="eyebrow">In this section</span><a href="#kobo-preview">Running the tech preview</a><a href="#kobo-holiday">Holiday announcement</a></nav>
+        <div class="wrap panel-intro">
+          <p class="lead">Kobo adds Creator Mode to games people already play, so they can change a game while they're playing it. I built Kobo's community Discord server from scratch, then ran, managed and moderated its Hello Neighbor technical preview and friends-and-family events, working with tinyBuild, the studio behind Hello Neighbor.</p>
+          <div class="kobo-grid" id="kobo-preview">
+            <div class="stack">
+              <div><p class="eyebrow">What I did</p><h3 class="sub">Running the tech preview</h3></div>
+              <ul class="did">
+                <li>Built the Kobo community Discord server</li>
+                <li>Ran the technical preview and friends-and-family events with tinyBuild</li>
+                <li>Moderated the server during events and stayed active in text and voice channels</li>
+                <li>Hosted community events such as the Kobo Extreme Home Makeover</li>
+                <li>Recorded user sentiment and traffic throughout each event</li>
+                <li>Sorted incoming bug reports into categories for the dev team</li>
+              </ul>
+              <a class="btn" href="https://www.kobo.io/" target="_blank" rel="noopener">Visit kobo.io ↗</a>
+            </div>
+            <figure>
+              <img src="img/co/kobo-hn.jpg" alt="Kobo Creator Mode running inside Hello Neighbor, with an object selected in front of the house" loading="lazy">
+              <figcaption class="cap">Kobo Creator Mode inside Hello Neighbor, from the December 2025 technical preview.</figcaption>
+            </figure>
+          </div>
+          <figure class="posted" id="kobo-holiday" style="margin-top:12px">
+            <figcaption><span class="eyebrow">As posted in Discord · Dec 25, 2025</span><span class="cap">101 reactions</span></figcaption>
+            <div class="shot" tabindex="0"><img src="img/co/kobo_holiday.png" alt="Christmas announcement in the Kobo Discord showing a Hello Neighbor house decorated with holiday lights and snow" loading="lazy"></div>
+            <p class="cap">My holiday announcement for the community. I decorated the house in Hello Neighbor myself, using the Kobo editor.</p>
+          </figure>
+        </div>
+        <div class="panel-close"><button class="btn" type="button" data-close="kobo">Close Kobo ↑</button></div>
+      </div>
+    </div>
+  </section>
+  <section class="co" id="joyn">
+    <button class="band joyn" type="button" id="b-joyn" aria-expanded="false" aria-controls="p-joyn">
+      <span class="joyn-art" aria-hidden="true"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0 30H470l30-24 30 48 24-18h120l30-34 36 56 30-38h60l24 18 30-12h316" fill="none" stroke="#3BB0EE" stroke-width="2.5" vector-effect="non-scaling-stroke"/></svg><img src="img/co/Joyn_Head.png" alt=""></span>
+      <span class="band-body"><span class="band-meta">Formerly Tournament Kings · 2019 – 2022</span><span class="band-title">Joyn</span><span class="band-role">Tourney Bot, Support Bot and 600K+ community members</span></span>
+      <span class="band-toggle"><span class="t-open">Open</span><span class="t-close">Close</span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span>
+    </button>
+    <div class="panel" id="p-joyn" role="region" aria-labelledby="b-joyn" inert>
+      <div class="panel-clip">
+        <nav class="wrap injump" aria-label="In this section"><span class="eyebrow">In this section</span><a href="#joyn-products">Tourney Bot &amp; Support Bot</a><a href="#joyn-partners">Selected partnerships</a><a href="#joyn-communities">Some of the biggest game Discords</a></nav>
+        <div class="wrap panel-intro">
+          <p class="lead">Joyn, called Tournament Kings while I was there, builds Discord apps and runs gaming communities. I started as community manager and became director of sales, working mostly on Tourney Bot and Support Bot.</p>
+          <div class="nums three">
+            <div><b>1,000+</b><span>Fortnite Build Battle tournaments run, with livestreams and casting</span></div>
+            <div><b>600K+</b><span>members across 8+ Discord communities I managed</span></div>
+            <div><b>2M+</b><span>users added to our apps' audience</span></div>
+          </div>
+        </div>
+        <section class="seg" id="joyn-products">
+          <div class="wrap stack">
+            <div><p class="eyebrow">Discord apps</p><h3 class="sub">Tourney Bot &amp; Support Bot</h3></div>
+            <div class="products">
+              <article class="product"><img src="img/co/Portfolio_-_Tourney_Bot.png" alt="Tourney Bot logo" loading="lazy"><div><h4>Tourney Bot</h4><p>Runs whole tournaments inside a Discord server, so players never leave for a third-party site. I helped run more than a thousand Fortnite Build Battle tournaments on it, including the livestreams and casting.</p><a class="btn" href="https://tourneybot.gg" target="_blank" rel="noopener">tourneybot.gg ↗</a></div></article>
+              <article class="product"><img src="img/co/Portfolio_-_Support_Bot.png" alt="Support Bot logo" loading="lazy"><div><h4>Support Bot</h4><p>A ticketing system for Discord that sends each request to the right team and answers common questions automatically, taking load off support staff.</p><a class="btn" href="https://supportbot.gg" target="_blank" rel="noopener">supportbot.gg ↗</a></div></article>
+            </div>
+          </div>
+        </section>
+        <section class="seg" id="joyn-partners">
+          <div class="wrap stack">
+            <div><p class="eyebrow">Director of Sales</p><h3 class="sub">Selected partnerships</h3></div>
+            <div class="partners">
+              <div class="partner p-ac"><span class="p-bg" aria-hidden="true"><img class="p-art" src="img/co/p_autochess.jpg" alt=""><img class="p-mark" src="img/co/p_autochess_logo.png" alt=""></span><span class="eyebrow">Tencent</span><h4>Auto Chess World Cup</h4><p>Hosted the Auto Chess World Cup on Tourney Bot.</p></div>
+              <div class="partner p-scu"><span class="p-bg" aria-hidden="true"><img class="p-mark" src="img/co/p_scu_seal.png" alt=""></span><span class="eyebrow">Santa Clara University</span><h4>College esports</h4><p>Helped the university's esports teams run their events.</p></div>
+              <div class="partner p-bs"><span class="p-bg" aria-hidden="true"><img class="p-mark" src="img/co/p_brawlstars.png" alt=""></span><span class="eyebrow">Brawl Stars</span><h4>French national championship</h4><p>Ran France's national Brawl Stars championship with a French Brawl Stars team.</p></div>
+            </div>
+            <p class="cap">Also worked with brands including Riot Games and Twitch Rivals, and ran tournaments for Fortnite, Valorant, Call of Duty, Wild Rift, TFT, Hearthstone, Minecraft and more.</p>
+          </div>
+        </section>
+        <section class="seg" id="joyn-communities">
+          <div class="wrap stack">
+            <div><p class="eyebrow">Communities</p><h3 class="sub">Some of the biggest game Discords</h3><p class="cap" style="margin-top:8px">We managed some of the largest Discord servers for different games. Joyn has since sold some of them; these are a few it still runs.</p></div>
+            <div class="communities">
+            <a class="community" href="https://communities.joyn.gg/" target="_blank" rel="noopener"><img src="img/co/c_fortnite.jpg" alt="" loading="lazy"><span><b>Fortnite</b><small>~98K members</small></span></a>
+            <a class="community" href="https://communities.joyn.gg/" target="_blank" rel="noopener"><img src="img/co/c_wild_rift.jpg" alt="" loading="lazy"><span><b>League of Legends: Wild Rift</b><small>~89K members</small></span></a>
+            <a class="community" href="https://communities.joyn.gg/" target="_blank" rel="noopener"><img src="img/co/c_pokemon.jpg" alt="" loading="lazy"><span><b>Pokémon Unite</b><small>~44.7K members</small></span></a>
+            <a class="community" href="https://communities.joyn.gg/" target="_blank" rel="noopener"><img src="img/co/c_call_of_duty.jpg" alt="" loading="lazy"><span><b>Call of Duty HUB</b><small>~40.6K members</small></span></a>
+            <a class="community" href="https://communities.joyn.gg/" target="_blank" rel="noopener"><img src="img/co/c_warzone.jpg" alt="" loading="lazy"><span><b>Call of Duty: Warzone 3 &amp; Mobile</b><small>~26.9K members</small></span></a>
+            <a class="community" href="https://communities.joyn.gg/" target="_blank" rel="noopener"><img src="img/co/c_valheim.jpg" alt="" loading="lazy"><span><b>Valheim / ICARUS</b><small>~18.2K members</small></span></a>
+            </div>
+            <a class="btn" href="https://communities.joyn.gg/" target="_blank" rel="noopener">See Joyn communities ↗</a>
+          </div>
+        </section>
+        <div class="panel-close"><button class="btn" type="button" data-close="joyn">Close Joyn ↑</button></div>
+      </div>
+    </div>
+  </section>
+</div>
 
-<section class="seg" id="journey">
-  <div class="wrap">
-    <div class="seg-head">
-      <div><p class="eyebrow">Background · 2019 – now</p><h2>How I got here</h2></div>
-      <p>I started out running Discord communities and tournaments, then grew with The Bazaar from community manager to leading production across its teams.</p>
-    </div>
-    <div class="nums">
-      <div><b>150K+</b><span>Discord members on The Bazaar, up from 2,500</span></div>
-      <div><b>78M+</b><span>Reddit views in 12 months</span></div>
-      <div><b>6.6M</b><span>X impressions in 12 months</span></div>
-      <div><b>61 + 3</b><span>videos and animated shorts in 14 months</span></div>
-    </div>
-    <div class="journey">
-      <article class="job">
-        <p class="eyebrow">The Bazaar · 2022 – now</p>
-        <h3>Tempo</h3>
-        <p class="path">Community Manager → Community Director → Producer</p>
-        <ul>
-          <li>Wrote and ran a content-based marketing strategy and the annual content calendar</li>
-          <li>Concepted and produced 61 videos and 3 animated shorts, writing and storyboarding many of them</li>
-          <li>Led a team of 8+ across social, merchandise, community platforms and support</li>
-          <li>Ran weekly goals and retrospectives across engineering, art, tech art, community and QA</li>
-          <li>Built weekly community sentiment reporting across platforms</li>
-        </ul>
-      </article>
-      <article class="job">
-        <p class="eyebrow">2019 – 2022</p>
-        <h3>Tournament Kings</h3>
-        <p class="path">Community Manager → Director of Sales</p>
-        <ul>
-          <li>Managed 8+ Discord communities with 600K+ members</li>
-          <li>Organized tournaments for Fortnite, Valorant, Call of Duty, Wild Rift, TFT, Hearthstone, Minecraft and more</li>
-          <li>Worked with brands including Riot Games, Tencent and Twitch Rivals</li>
-          <li>Grew the product's audience by over two million users</li>
-        </ul>
-      </article>
-    </div>
-    <div class="reach">
-      <h3>Get in touch</h3>
-      <div class="contact" style="margin-top:0"><span class="email">andrewnadams13@gmail.com</span><a class="btn" href="https://www.linkedin.com/in/andynadams13" target="_blank" rel="noopener">LinkedIn ↗</a></div>
-    </div>
+<div class="wrap" id="contact">
+  <div class="reach" style="margin-top:0">
+    <h3>Get in touch</h3>
+    <div class="contact" style="margin-top:0"><span class="email">andrewnadams13@gmail.com</span><a class="btn" href="https://www.linkedin.com/in/andynadams13" target="_blank" rel="noopener">LinkedIn ↗</a></div>
   </div>
-</section>
-
-<div class="wrap">
   <footer>
-    <span>Andrew Adams · Selected work, 2025</span>
-    <span>The Bazaar footage and artwork belong to their owners and are shown as work samples.</span>
+    <span>Andrew Adams · Selected work, 2019 – now</span>
+    <span>Company names, footage and artwork belong to their owners and are shown as work samples.</span>
   </footer>
 </div>
 
@@ -710,6 +943,7 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
   take.addEventListener("click",doTake);
   const desk=$("desk");
   document.addEventListener("keydown",e=>{
+    if(desk.closest('.panel:not(.open)'))return;
     const r=desk.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
     if(e.target.closest&&e.target.closest("input,textarea"))return;
     const n=parseInt(e.key,10);
@@ -731,6 +965,31 @@ footer{border-top:1px solid var(--line);padding-block:28px 40px;display:flex;fle
     try{navigator.clipboard.writeText(t).then(done,sel)}catch(e){sel()}});
   addLog("0:00:00  Show start. Program on caster desk.");
   paint();
+})();
+</script>
+
+<script>
+(function(){
+  const reduce=window.matchMedia&&matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function setOpen(key,open,scroll){
+    const b=document.getElementById("b-"+key), p=document.getElementById("p-"+key); if(!b)return;
+    b.setAttribute("aria-expanded",open); p.classList.toggle("open",open);
+    if(open)p.removeAttribute("inert"); else p.setAttribute("inert","");
+    if(scroll)document.getElementById(key).scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
+  }
+  document.querySelectorAll(".band").forEach(b=>b.addEventListener("click",()=>{
+    const key=b.id.slice(2); setOpen(key,b.getAttribute("aria-expanded")!=="true",false);
+  }));
+  document.querySelectorAll("[data-open]").forEach(el=>el.addEventListener("click",e=>{e.preventDefault();setOpen(el.dataset.open,true,true)}));
+  document.querySelectorAll("[data-close]").forEach(el=>el.addEventListener("click",()=>{setOpen(el.dataset.close,false,true)}));
+  /* links into the Bazaar panel (e.g. "Go to the show") open it first */
+  document.addEventListener("click",e=>{
+    const a=e.target.closest('a[href^="#"]'); if(!a||a.dataset.open)return;
+    const t=document.querySelector(a.getAttribute("href")); const panel=t&&t.closest(".panel");
+    if(panel&&!panel.classList.contains("open")){e.preventDefault();setOpen(panel.id.slice(2),true,false);setTimeout(()=>t.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"}),reduce?0:560)}
+  });
+  const h=(location.hash||"").slice(1);
+  if(["bazaar","kobo","joyn"].includes(h))setOpen(h,true,true);
 })();
 </script>
 
